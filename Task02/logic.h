@@ -2,4 +2,6 @@
 #include <iostream>
 using namespace std;
 
-#define 
+#define DEFAULT_SIZE 100 
+
+void reverse(int array[DEFAULT_SIZE], int lenght);

@@ -1,8 +1,5 @@
-#include "logic.h"
+#include "util.h"
 
-#include <iostream>
-
-#define DEFAULT_SIZE 100
 
 using namespace std;
 int main() {
@@ -23,13 +20,7 @@ int main() {
 
 
 	//logic
-	int n = lenght / 2;
-	for (int index = 0; index < n; index++)
-	{
-		int temp = array[index];
-		array[index] = array[lenght - 1 - index];
-		array[lenght - 1 - index] = temp;
-	}
+	reverse(array, lenght);
 
 	// output
 	cout << "result array: ";
