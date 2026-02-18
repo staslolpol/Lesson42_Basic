@@ -1,37 +1,42 @@
 #include <iostream>
 
-
+#define DEFAULT_SIZE 100
 
 using namespace std;
 int main() {
-	
-	const int SIZE = 10;
-	int array[SIZE];
+	int array[DEFAULT_SIZE];
+	int lenght;
 
-	cout << "input your array elements: ";
-	for (int index = 0; index < SIZE; index++)
+	do {
+		system("cls");
+		cout << "Input size of array: ";
+		cin >> lenght;
+	} while (lenght <= 0);
+
+	cout << "Input your array elements: ";
+	for (int index = 0; index < lenght; index++)
 	{
 		cin >> array[index];
 	}
 
-	int positive_sum = 0;
-	int negative_sum = 0;
-
-	for (int index = 0; index < SIZE; index++)
+	
+	//logic
+	int n = lenght / 2;
+	for (int index = 0; index < n; index++)
 	{
-		positive_sum += array[index] > 0 ? array[index] : 0;
+		int temp = array[index];
+		array[index] = array[lenght - 1 - index];
+		array[lenght - 1 - index] = temp;
 	}
 
-	for (int index = 0; index < SIZE; index++)
+	// output
+	cout << "result array: ";
+	for (int index = 0; index < lenght; index++)
 	{
-		if (array[index] < 0) {
-			negative_sum += array[index];
-		}
+		cout << array[index] << " ";
 	}
 
-	cout << "Sum of positive element is " << positive_sum << '\n';
-	cout << "Sum of negative element is " << negative_sum << '\n';
-
+	
 
 	return 0;
 }
