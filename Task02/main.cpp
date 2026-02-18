@@ -12,24 +12,15 @@ int main() {
 		cin >> lenght;
 	} while (lenght <= 0);
 
-	cout << "Input your array elements: ";
-	for (int index = 0; index < lenght; index++)
-	{
-		cin >> array[index];
-	}
+	user_init(array, lenght);
 
 
 	//logic
 	reverse(array, lenght);
 
 	// output
-	cout << "result array: ";
-	for (int index = 0; index < lenght; index++)
-	{
-		cout << array[index] << " ";
-	}
-
-
+	print("Result array: ");
+	print(convert(array, lenght));
 
 	return 0;
 }
