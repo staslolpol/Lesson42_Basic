@@ -19,24 +19,24 @@ int main() {
 		cin >> array[index];
 	}
 
-	
-	//logic
-	int n = lenght / 2;
-	for (int index = 0; index < n; index++)
-	{
-		int temp = array[index];
-		array[index] = array[lenght - 1 - index];
-		array[lenght - 1 - index] = temp;
-	}
+	int positive_sum = 0;
+	int negative_sum = 0;
 
-	// output
-	cout << "result array: ";
 	for (int index = 0; index < lenght; index++)
 	{
-		cout << array[index] << " ";
+		positive_sum += array[index] > 0 ? array[index] : 0;
 	}
 
-	
+	for (int index = 0; index < lenght; index++)
+	{
+		if (array[index] < 0) {
+			negative_sum += array[index];
+		}
+	}
+
+	cout << "Sum of positive element is " << positive_sum << '\n';
+	cout << "Sum of negative element is " << negative_sum << '\n';
+
 
 	return 0;
 }
